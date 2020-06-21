@@ -11,19 +11,19 @@ Rewrite和Scripting依然有效
 */
 
 var wifiname = $network.wifi.ssid;
-var proxywifi = ["lao dua","lao dua_5G"];
+var proxywifi = ["NETCAP"];
 for (var i = 0; i < proxywifi.length; i++) {
 	if (wifiname==proxywifi[i]){
 		$surge.setOutboundMode("direct");
 		
-		setTimeout(function(){$notification.post("Meeta_Remind","您目前处于WIFI-Proxy"+"SSID: "+wifiname,"Surge已自动变为直连模式");}, 3000);
+		setTimeout(function(){$notification.post("Sylar","您目前处于WIFI-Proxy"+"SSID: "+wifiname,"Surge已自动变为直连模式");}, 3000);
 		break;
 		
 	};
 	if (i==proxywifi.length-1){
 		$surge.setOutboundMode("rule");
 		
-		setTimeout(function(){$notification.post("Meeta_Remind","Surge已自动变为规则模式","");}, 3000);
+		setTimeout(function(){$notification.post("Sylar","Surge已自动变为规则模式","");}, 3000);
 	
 	}
 	
